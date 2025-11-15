@@ -50,3 +50,8 @@ AHB is basically a bus ( a bundle of signals ) which connects a single/multiple 
   a. the subordinate responds to the manager's requests based on the provided address
   b. subordinates include memories, peripherals, and bridges to the other buses like APB
   c. if the address sent by the manager does not match any subordinate, the response is consideres invalid
+
+![AMBA-AHB](https://github.com/ShankhalikaMallick/AMBA-AHB/blob/IMAGES/ahb%20block%20diagram.png?raw=true)
+
+MANAGER BLOCK DIAGRAM:
+![Manager](https://github.com/ShankhalikaMallick/AMBA-AHB/blob/IMAGES/manager.png?raw=true)   
