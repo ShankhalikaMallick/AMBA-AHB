@@ -61,8 +61,24 @@ all signals are indicated with 'H' which indicates AHB protocol. (for APB signal
    1. HRESETn: active low signal - 0=reset, 1=not reset  
    2. HCLKn: clock signal  
 2. TRANSFER RESPONSE SIGNALS:
-   1. HREADY: input for master, output for slave  it will tell master if slave is ready for any transaction or not; if HREADY=0 -> slave is not ready;  if HREADY=1 -> slave is ready for transaction
-   2. HRESP: 
+   1. HREADY:
+      input for master, output for slave   
+      it will tell master if slave is ready for any transaction or not;    
+      if HREADY=0 -> slave is not ready;
+      if HREADY=1 -> slave is ready for transaction
+   2. HRESP:
+      input to master, output to a slave
+      it tells master if transaction is successful or not
+      if HRESP=0 -> transaction successful
+      if HRESP=1 -> transaction not successful
+3.ADDRESS AND CONTROL SIGNALS:
+    1. HWRITE:
+       indicates is the transaction happening is a read or a write transaction
+       if HWRITE=0 -> read transaction, data transfer from slave to master ie. read from slave
+       if HWRITE=1 -> write transaction, data transfer from master to slave ie. write to slave
+   
+      
+      
   
 
 
