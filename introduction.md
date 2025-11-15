@@ -1,7 +1,5 @@
 ### What is a protocol:
-Protocols are a set of rules for establishing a communication between two or many devices so that communication is established between them.
-
-There are two types of protocols: 
+Protocols are a set of rules for establishing a communication between two or many devices so that communication is established between them. There are two types of protocols: 
 1. On-Chip protocols   
     a. AMBA AHB   
     b. AMBA APB  
@@ -12,15 +10,12 @@ There are two types of protocols:
     c. SPI  
 
 ### ON-CHIP PROTOCOLS:
-AMBA (Advanced Microcontroller Bus Architecture) is a set of specifications developed by ARM to standardize the communication between different functional blocks of an SoC.  
-AMBA consists of multiple protocols including:
+AMBA (Advanced Microcontroller Bus Architecture) is a set of specifications developed by ARM to standardize the communication between different functional blocks of an SoC. AMBA consists of multiple protocols including:
 1. AHB (Advanced High-performance Bus):  for high speed , high bandwidth communication
 2. APB (Advanced Peripheral Bus):        for low power, low bandwidth peripherals 
 3. AXI (Advanced eXtensible Interface):   for high performance, low latency, and high bandwidth applications
 
-The AMBA AHB (Advanced High-Performance Bus) is a part of ARM AMBA (Advanced Microcontroller Bus Architecture) family.  
-It is designed to suppport high performance, high bandwidth communcation between different components in a system on chip (SoC).  
-AHB povides: 
+The AMBA AHB (Advanced High-Performance Bus) is a part of ARM AMBA (Advanced Microcontroller Bus Architecture) family. It is designed to suppport high performance, high bandwidth communcation between different components in a system on chip (SoC). AHB povides: 
 1. single clock edge operation
 2. burst transfers
 3. pipelined structure   
