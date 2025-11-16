@@ -30,4 +30,14 @@ In a simple transfer with no wait states:  (HREADY!=0)
 ## READ TRANSFER WITH TWO WAIT STATES: (HREADY=0)
 <img width="814" height="318" alt="image" src="https://github.com/user-attachments/assets/8b6f9ae2-9b98-4487-8e68-6447bafead13" />
 
+if HREADY=0, we have wait state, in read (HWRITE=0), data is transferred from slave to master, each packet is associated with an address. In address phase all control signals are provided by the master
+if HREADY= 0 , then the master is not going to change the phase from data phase to address phase until and unless HREADY=1; here the data phase has to wait for 2 wait cycles for data to be transferred. HRDATA bus has no data during this period. address is set to A in the address phase, but after that as HREADY=0, the data phase waits for HREADY to become 1,  only then data is transferred Data(A). then we say the data phase has been extended to 3 cycles (extended phases)
 
+## WRITE TRANSFER WITH ONE WAIT STATES: (HREADY=0)
+<img width="1429" height="881" alt="image" src="https://github.com/user-attachments/assets/f555ba22-426d-4a28-8f8e-400d1b1dffdc" />
+
+in write transfer operations the manager holds the data stable throughout the extended cycles. for read transfers the subordinate does not have to provide valid data until the transfer is about to complete. in address phase we see HADDR is set to A as HREADY=1. but HREADY=0 in the next clock, during wait stages master will not sample any data. so there is a waiting stage even though data(A) is available in the 2nd clock cycle. In the 3rd cycle data is sampled by master, and in 4th cycle the master will change the phase again fo the next paket transfer. so, here also data phase has been extended to 2 cycles.
+
+### 
+NOTE: in write operation, even though HREADY=0, master is providing the data HWDATA= data(A), but it is maintaing the data stable until the data phase is completed.  
+in read state however, the slave is not at all providing the data when HREADY=0, the data is only provided by slave when HREADY=1
